@@ -3,6 +3,8 @@ import { Route,Routes, useLocation } from "react-router-dom";
 import Displayhome from "./Displayhome";
 import Displayalbum from "./Displayalbum";
 import { albumsData } from "../assets/assets/assets";
+import Login from "./login";
+import Music from "./Music";
 
 const Display=()=>{
     const displayRef=useRef();
@@ -20,9 +22,11 @@ const Display=()=>{
       }
 })
   return (
-   <div ref={displayRef} className="w-[100%] m-2 px-6 pt-4 rounded bg-[#121212] text-white overflow-auto lg:w-[75%] lg:ml-0">
+   <div ref={displayRef} className="w-[100%] m-2 px-6 pt-4 rounded bg-[#121212] text-white overflow-auto  lg:ml-0">
       <Routes>
         <Route path='/' element={<Displayhome/>}></Route>
+        <Route path='/Login' element={<Login/>}></Route>
+         <Route path='/music' element={<Music/>}></Route> 
         <Route path='/album/:id' element={<Displayalbum/>}></Route>
     </Routes>
 
